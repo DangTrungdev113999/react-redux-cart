@@ -1,30 +1,23 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import Products from './components/Products';
-import Cart from './components/Cart';
+import ProductContainer from './containers/ProductContainer';
+import CartContainer from './containers/cartContainer';
 import Message from './components/Message';
 import Footer from './components/Footer';
 
 class App extends Component {
     
-
-
     render() {
         return (
-            <div class="hidden-sn animated deep-purple-skin">
-            {/* <!-- Header --> */}
+            <div className="hidden-sn animated deep-purple-skin">
             <Header/>
             <main id="mainContainer">
                 <div className="container">
-                    {/* <!-- Products --> */}
-                    <Products/>
-                    {/* <!-- Message --> */}
+                    <ProductContainer/>
                     <Message/>
-                    {/* <!-- Cart --> */}
-                    <Cart/>
+                    <CartContainer/>
                 </div>
             </main>
-            {/* <!-- Footer --> */}
             <Footer/>
         </div>
         )
