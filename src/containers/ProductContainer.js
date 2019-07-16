@@ -17,7 +17,7 @@ class ProductContainer extends Component {
     }
 
     showProducts = products => {
-        const { onAddToCart } = this.props
+        const { onAddToCart, onChangeMessage } = this.props
         let result = null;
         if (products.length > 0) {
             result = products.map((product, index) => {
@@ -25,6 +25,7 @@ class ProductContainer extends Component {
                     key={index}
                     product={product}
                     onAddToCart={onAddToCart}
+                    onChangeMessage={onChangeMessage}
                 />
             })
         }
@@ -44,7 +45,8 @@ ProductContainer.propTypes = {
             rating: PropTypes.number.isRequired,
             inventory: PropTypes.number.isRequired
         })
-    ).isRequired
+    ).isRequired,
+    onChangeMessage: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => {
@@ -56,7 +58,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch, props) => {
     return {
         onAddToCart: product => {
-            dispatch(actions.addToCart(product, 1));
+            dispatch(actions.actAddToCart(product, 1));
+        },
+        onChangeMessage: message => {
+            dispatch(actions.actChangeMessage(message))
         }
     }
 }
