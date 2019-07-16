@@ -1,3 +1,4 @@
 export const ADD_TO_CART = 'ADD_TO_CART';
-export const CHANT_MESSAGE = 'CHANT_MESSAGE';
+export const CHANGE_MESSAGE = 'CHANT_MESSAGE';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';

@@ -6,7 +6,7 @@ const initialState = Message.MSG_WELCOME;
 
 const MessageReducer = (state = initialState, action) => {
     switch(action.type) {
-        case Types.CHANT_MESSAGE:
+        case Types.CHANGE_MESSAGE:
             return action.message
         default: return state
     }
